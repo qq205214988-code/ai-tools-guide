@@ -5,81 +5,135 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>我的AI工具库</title>
   <style>
+    :root {
+      --ink: #111827;
+      --muted: #64748b;
+      --soft: #f6f8fb;
+      --card: #ffffff;
+      --line: #dbe3ef;
+      --blue: #2563eb;
+      --green: #0f9f6e;
+      --teal: #0f9f9a;
+      --amber: #d97706;
+      --rose: #d94678;
+      --shadow: 0 18px 45px rgba(20, 32, 54, .10);
+    }
+
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      font-family: "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
-      color: #111827;
-      background: #f6f8fb;
+      color: var(--ink);
+      background: var(--soft);
+      font-family: "Microsoft YaHei", "PingFang SC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.55;
     }
+
     a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+
     .hero {
-      min-height: 74vh;
+      min-height: 76vh;
       padding: 28px 18px;
       color: #fff;
       background:
-        linear-gradient(rgba(8, 15, 28, .58), rgba(8, 15, 28, .76)),
+        linear-gradient(rgba(8, 15, 28, .48), rgba(8, 15, 28, .78)),
         url("https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1800&q=80") center / cover;
       display: grid;
       align-items: center;
     }
-    .wrap { width: min(1180px, calc(100% - 28px)); margin: 0 auto; }
+
+    .wrap {
+      width: min(1180px, calc(100% - 28px));
+      margin: 0 auto;
+    }
+
     .eyebrow {
       display: inline-flex;
+      align-items: center;
+      gap: 8px;
       padding: 7px 12px;
-      border: 1px solid rgba(255,255,255,.34);
+      border: 1px solid rgba(255,255,255,.36);
       border-radius: 999px;
-      background: rgba(255,255,255,.13);
+      background: rgba(255,255,255,.12);
       font-size: 13px;
+      backdrop-filter: blur(10px);
     }
+
     h1 {
+      max-width: 900px;
       margin: 22px 0 14px;
-      max-width: 880px;
-      font-size: clamp(38px, 7vw, 76px);
-      line-height: 1.02;
+      font-size: clamp(38px, 7vw, 74px);
+      line-height: 1.03;
       letter-spacing: 0;
     }
+
     .hero p {
       max-width: 760px;
       margin: 0;
-      color: rgba(255,255,255,.88);
-      font-size: clamp(16px, 2.3vw, 22px);
+      color: rgba(255,255,255,.9);
+      font-size: clamp(16px, 2.2vw, 21px);
     }
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
-    .actions a, .actions button {
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .hero-actions a,
+    .hero-actions button {
       min-height: 44px;
       padding: 0 16px;
       border: 1px solid rgba(255,255,255,.42);
       border-radius: 8px;
       color: #fff;
-      background: rgba(255,255,255,.13);
-      font: inherit;
+      background: rgba(255,255,255,.14);
       cursor: pointer;
     }
-    .actions a:first-child {
+
+    .hero-actions a:first-child {
       color: #0f172a;
       background: #fff;
       border-color: #fff;
       font-weight: 700;
     }
-    main { padding: 24px 0 54px; }
+
+    main { padding: 24px 0 58px; }
+
     .summary {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 10px;
       margin-top: -42px;
       position: relative;
       z-index: 2;
     }
+
     .summary-item {
       padding: 18px;
-      border: 1px solid #d9e0ea;
+      border: 1px solid var(--line);
       border-radius: 8px;
       background: rgba(255,255,255,.96);
-      box-shadow: 0 18px 45px rgba(19, 28, 45, .10);
+      box-shadow: var(--shadow);
     }
-    .summary-item strong { display: block; margin-bottom: 8px; font-size: 24px; line-height: 1; }
+
+    .summary-item strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .panel {
+      margin-top: 16px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+
     .section-head {
       display: flex;
       align-items: end;
@@ -87,80 +141,152 @@
       gap: 18px;
       margin: 34px 0 14px;
     }
-    .section-head h2 { margin: 0; font-size: clamp(24px, 4vw, 38px); letter-spacing: 0; }
-    .section-head p { margin: 0; max-width: 560px; color: #5f6b7a; text-align: right; }
-    .decision { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
-    .decision-card {
-      min-height: 158px;
-      padding: 14px;
-      border: 1px solid #d9e0ea;
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(24px, 4vw, 38px);
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      max-width: 620px;
+      margin: 0;
+      color: var(--muted);
+      text-align: right;
+    }
+
+    .search-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .search-input {
+      width: 100%;
+      min-height: 46px;
+      padding: 0 14px;
+      border: 1px solid var(--line);
       border-radius: 8px;
+      outline: none;
+      background: #f8fafc;
+      color: var(--ink);
+    }
+
+    .search-input:focus {
+      border-color: #93b4f7;
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, .12);
       background: #fff;
     }
-    .decision-card b { display: block; margin-bottom: 8px; font-size: 16px; }
-    .decision-card span {
-      display: inline-block;
-      margin: 8px 0;
-      color: #2563eb;
-      font-size: 13px;
-      font-weight: 700;
-    }
-    .filters {
-      position: sticky;
-      top: 0;
-      z-index: 5;
-      display: flex;
-      gap: 8px;
-      overflow-x: auto;
-      padding: 10px 0;
-      background: rgba(246,248,251,.94);
-      backdrop-filter: blur(10px);
-    }
-    .filter {
-      flex: 0 0 auto;
+
+    .clear-btn,
+    .filter,
+    .small-btn {
       min-height: 38px;
       padding: 0 12px;
-      border: 1px solid #d9e0ea;
+      border: 1px solid var(--line);
       border-radius: 8px;
       background: #fff;
       color: #243041;
-      font: inherit;
       cursor: pointer;
     }
+
+    .clear-btn:hover,
+    .filter:hover,
+    .small-btn:hover { border-color: #aab8cc; }
+
+    .filters {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 10px 0 0;
+      scrollbar-width: thin;
+    }
+
+    .filter { flex: 0 0 auto; }
     .filter.active {
       color: #fff;
-      background: #111827;
-      border-color: #111827;
+      background: var(--ink);
+      border-color: var(--ink);
       font-weight: 700;
     }
-    .category-band {
-      margin: 28px 0 12px;
-      padding: 16px;
-      border: 1px solid #d9e0ea;
-      border-left: 6px solid #2563eb;
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .quick-card {
+      min-height: 150px;
+      padding: 14px;
+      border: 1px solid var(--line);
       border-radius: 8px;
       background: #fff;
     }
-    .category-band h2 { margin: 0 0 4px; font-size: 24px; }
-    .category-band p { margin: 0; color: #5f6b7a; }
-    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+
+    .quick-card b {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    .quick-card span {
+      display: inline-block;
+      margin: 8px 0;
+      color: var(--blue);
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .category-band {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      margin: 28px 0 12px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-left: 6px solid var(--blue);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .category-band h2 {
+      margin: 0 0 4px;
+      font-size: 24px;
+    }
+
+    .category-band p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
     .tool-card {
       display: grid;
       grid-template-columns: 56px 1fr;
       gap: 12px;
-      min-height: 226px;
+      min-height: 260px;
       padding: 16px;
-      border: 1px solid #d9e0ea;
+      border: 1px solid var(--line);
       border-radius: 8px;
-      background: #fff;
+      background: var(--card);
       box-shadow: 0 8px 24px rgba(19, 28, 45, .05);
       transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+      position: relative;
     }
+
     .tool-card:hover {
       transform: translateY(-2px);
       border-color: #a9b7cb;
-      box-shadow: 0 18px 45px rgba(19, 28, 45, .10);
+      box-shadow: var(--shadow);
     }
+
     .logo {
       width: 52px;
       height: 52px;
@@ -172,9 +298,46 @@
       font-weight: 800;
       line-height: 1;
     }
-    .tool-title { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 8px; }
-    .tool-title h3 { margin: 0; font-size: 18px; line-height: 1.15; }
-    .tag {
+
+    .tool-title {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 8px;
+      padding-right: 34px;
+    }
+
+    .tool-title h3 {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.15;
+    }
+
+    .fav-btn {
+      position: absolute;
+      right: 12px;
+      top: 12px;
+      width: 32px;
+      height: 32px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: #64748b;
+      cursor: pointer;
+    }
+
+    .fav-btn.active {
+      color: #b45309;
+      background: #fff7df;
+      border-color: #f4c866;
+    }
+
+    .tag,
+    .meta-chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 22px;
       padding: 2px 7px;
       border-radius: 999px;
       background: #eef2ff;
@@ -183,16 +346,76 @@
       font-weight: 700;
       white-space: nowrap;
     }
-    .tool-card p { margin: 8px 0; color: #5f6b7a; font-size: 14px; }
-    .tool-card p b { color: #111827; }
-    .note {
-      margin-top: 10px;
-      padding: 8px 10px;
-      border-radius: 8px;
-      background: #fff7df;
-      color: #6f4600;
-      font-size: 13px;
+
+    .meta-chip {
+      margin: 0 5px 6px 0;
+      background: #f1f5f9;
+      color: #475569;
+      font-weight: 600;
     }
+
+    .tool-card p {
+      margin: 8px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .tool-card p b { color: var(--ink); }
+
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .open-btn,
+    .detail-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 36px;
+      padding: 0 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .open-btn {
+      color: #fff;
+      background: var(--ink);
+    }
+
+    .detail-btn {
+      border: 1px solid var(--line);
+      color: #243041;
+      background: #fff;
+    }
+
+    .template-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .template-card {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .template-card h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+    }
+
+    .template-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
     .notice {
       margin-top: 28px;
       padding: 18px;
@@ -201,30 +424,98 @@
       background: #fff7df;
       color: #6f4600;
     }
-    footer { padding: 28px 18px 40px; color: #5f6b7a; text-align: center; }
-    @media (max-width: 920px) {
-      .summary, .decision, .grid { grid-template-columns: repeat(2, 1fr); }
+
+    .empty {
+      padding: 28px;
+      border: 1px dashed #cbd5e1;
+      border-radius: 8px;
+      color: var(--muted);
+      text-align: center;
+      background: #fff;
+    }
+
+    dialog {
+      width: min(720px, calc(100% - 28px));
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0;
+      box-shadow: 0 24px 80px rgba(15, 23, 42, .22);
+    }
+
+    dialog::backdrop { background: rgba(15, 23, 42, .48); }
+
+    .modal-head {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .modal-body { padding: 18px; }
+
+    .modal-body h3 {
+      margin: 18px 0 8px;
+      font-size: 16px;
+    }
+
+    .prompt-box {
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f8fafc;
+      color: #243041;
+      white-space: pre-wrap;
+    }
+
+    .close-btn {
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      cursor: pointer;
+    }
+
+    footer {
+      padding: 28px 18px 40px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 960px) {
+      .summary,
+      .quick-grid,
+      .grid,
+      .template-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .section-head { display: block; }
       .section-head p { margin-top: 8px; text-align: left; }
     }
+
     @media (max-width: 640px) {
       .hero { min-height: 78vh; padding-top: 20px; }
-      .summary, .decision, .grid { grid-template-columns: 1fr; }
+      .summary,
+      .quick-grid,
+      .grid,
+      .template-grid,
+      .search-row { grid-template-columns: 1fr; }
       .summary { margin-top: -26px; }
       .tool-card { grid-template-columns: 48px 1fr; min-height: 0; padding: 14px; }
       .logo { width: 46px; height: 46px; font-size: 13px; }
+      .category-band { display: block; }
     }
   </style>
 </head>
 <body>
   <header class="hero">
     <div class="wrap">
-      <div class="eyebrow">我的AI工具库 · 长期网址版 · 改 tools.json 就能更新</div>
-      <h1>AI热门款 / 冷门款 / 自己试用工具库</h1>
-      <p>这是给你长期使用的 AI 工具导航。以后你试了新工具，只要在数据文件里加一条，网站就会自动显示。</p>
-      <div class="actions">
-        <a href="#tools">查看工具分类</a>
-        <a href="#choose">我该怎么选</a>
+      <div class="eyebrow">个人AI工具库 · 搜索筛选 · 试用记录 · 长期更新</div>
+      <h1>我的 AI 工具使用手册</h1>
+      <p>把热门工具、冷门好用工具、自己正在试用的工具放在一个地方。以后只改 tools.json，就能持续更新这个网址。</p>
+      <div class="hero-actions">
+        <a href="#tools">查看工具</a>
+        <a href="#templates">提示词模板</a>
         <button id="copyLink" type="button">复制当前网址</button>
       </div>
     </div>
@@ -232,41 +523,69 @@
 
   <main class="wrap">
     <section class="summary">
-      <div class="summary-item"><strong id="toolCount">0</strong>个AI工具入口</div>
-      <div class="summary-item"><strong id="catCount">0</strong>大使用分类</div>
-      <div class="summary-item"><strong>1眼</strong>看懂能做什么</div>
-      <div class="summary-item"><strong>直达</strong>官网参考</div>
+      <div class="summary-item"><strong id="toolCount">0</strong>个工具</div>
+      <div class="summary-item"><strong id="catCount">0</strong>个分类</div>
+      <div class="summary-item"><strong id="favCount">0</strong>个常用收藏</div>
+      <div class="summary-item"><strong id="shownCount">0</strong>个当前结果</div>
     </section>
 
     <section id="choose">
       <div class="section-head">
-        <h2>怎么选</h2>
-        <p>新手最容易踩坑的是“听过哪个就用哪个”。正确方式是先按任务选类型。</p>
+        <h2>先按任务选</h2>
+        <p>不要先纠结哪个最火，先看你要完成什么事。工具只是手段，结果才是目标。</p>
       </div>
-      <div class="decision">
-        <div class="decision-card"><b>我要写东西/想点子</b><span>ChatGPT / Claude / Kimi</span>适合文案、方案、总结、改写、日常问答。</div>
-        <div class="decision-card"><b>我要查资料/要来源</b><span>Perplexity / 秘塔 / NotebookLM</span>适合调研、学习、报告，需要出处时优先选。</div>
-        <div class="decision-card"><b>我要做PPT/海报</b><span>Gamma / Canva / WPS AI</span>适合快速生成演示、海报、网页和办公文档。</div>
-        <div class="decision-card"><b>我要做图/视频/音乐</b><span>Midjourney / Runway / Suno</span>适合创意视觉、短视频、配音和音乐。</div>
-        <div class="decision-card"><b>我要写代码/做网页</b><span>Cursor / Bolt / Lovable</span>适合代码辅助、网页原型、小应用搭建。</div>
+      <div class="quick-grid">
+        <div class="quick-card"><b>写东西/想点子</b><span>ChatGPT / Claude / Kimi</span>文案、方案、总结、改写、日常问答。</div>
+        <div class="quick-card"><b>查资料/要来源</b><span>Perplexity / 秘塔 / NotebookLM</span>调研、学习、报告，需要出处时优先选。</div>
+        <div class="quick-card"><b>做PPT/海报</b><span>Gamma / Canva / WPS AI</span>快速生成演示、海报、网页和办公文档。</div>
+        <div class="quick-card"><b>做图/视频/音乐</b><span>Midjourney / Runway / Suno</span>创意视觉、短视频、配音和音乐。</div>
+        <div class="quick-card"><b>写代码/做网页</b><span>Cursor / Bolt / Lovable</span>代码辅助、网页原型、小应用搭建。</div>
       </div>
     </section>
 
     <section id="tools">
       <div class="section-head">
-        <h2>工具分类</h2>
-        <p>点下面分类可以筛选。每张卡片都能点击进入官网。</p>
+        <h2>工具库</h2>
+        <p>搜索会同时查工具名、用途、分类、标签和你的备注。点“详情”可以看提示词和替代工具。</p>
       </div>
-      <nav class="filters" id="filters"></nav>
+
+      <div class="panel">
+        <div class="search-row">
+          <input id="searchInput" class="search-input" type="search" placeholder="搜索：PPT、图片、视频、写代码、免费、中文好用...">
+          <button id="resetBtn" class="clear-btn" type="button">清空筛选</button>
+        </div>
+        <div class="filters" id="categoryFilters"></div>
+        <div class="filters" id="tagFilters"></div>
+      </div>
+
       <div id="toolGroups"></div>
     </section>
 
+    <section id="templates">
+      <div class="section-head">
+        <h2>新手提示词模板</h2>
+        <p>复制后把括号里的内容换成你的实际需求，就能直接用。</p>
+      </div>
+      <div class="template-grid" id="templateGrid"></div>
+    </section>
+
     <section class="notice">
-      <b>更新方法：</b>打开 GitHub 仓库里的 <b>tools.json</b>，复制任意一段工具资料，改名称、分类、官网、用途和自己的试用感受，保存后网站会自动更新。
+      <b>以后怎么更新：</b>在 GitHub 仓库里编辑 <b>tools.json</b>。新增工具时复制一段，改名称、官网、用途、标签、推荐指数和 <b>myNote</b>，保存后网站会自动更新。
     </section>
   </main>
 
-  <footer>整理日期：2026-06-07 · 价格、功能和条款以各官网最新信息为准。</footer>
+  <dialog id="detailDialog">
+    <div class="modal-head">
+      <div>
+        <div class="eyebrow" id="modalCategory" style="color:#111827;border-color:#dbe3ef;background:#f8fafc"></div>
+        <h2 id="modalTitle" style="margin:10px 0 0"></h2>
+      </div>
+      <button class="close-btn" id="closeModal" type="button">X</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </dialog>
+
+  <footer>价格、功能和商用条款会变化，正式使用前以各官网最新说明为准。</footer>
 
   <script>
     const notes = {
@@ -279,8 +598,24 @@
       "音频会议": "做配音、音乐、剪辑、会议记录和降噪。"
     };
 
+    const templates = {
+      "聊天写作": "请你扮演我的写作助理。主题是【填写主题】，目标读者是【填写人群】，请先给我3个方向，再输出一版清晰、自然、容易懂的内容。",
+      "搜索研究": "请帮我研究【填写主题】。输出：核心结论、关键证据、不同观点、风险提醒、下一步建议。尽量列出来源。",
+      "办公PPT": "请把【填写主题】整理成10页PPT大纲。每页包含：标题、核心观点、3个要点、配图建议、讲稿提示。",
+      "图片设计": "请生成一张【填写用途】图片。风格【填写风格】，主体【填写主体】，背景【填写背景】，比例【填写比例】，画面干净、有质感。",
+      "视频数字人": "请把【填写内容】改成30秒短视频脚本。输出：镜头、画面、字幕、配音、节奏建议。",
+      "编程开发": "我想做一个【填写功能】。请先给最小可用版本，再列出文件结构、实现步骤、测试方法和后续优化。",
+      "音频会议": "请把这段内容改成自然口播稿。要求：短句、好懂、有节奏，适合【填写平台/场景】。"
+    };
+
     let allTools = [];
-    let active = "全部";
+    let activeCategory = "全部";
+    let activeTag = "全部";
+    let searchText = "";
+    const favoriteKey = "ai-tools-guide-favorites";
+    let favorites = new Set(JSON.parse(localStorage.getItem(favoriteKey) || "[]"));
+
+    const $ = (selector) => document.querySelector(selector);
 
     function escapeHtml(value) {
       return String(value ?? "").replace(/[&<>"']/g, (char) => ({
@@ -292,62 +627,201 @@
       }[char]));
     }
 
-    function card(tool) {
-      const note = tool.myNote ? `<div class="note"><b>我的记录：</b>${escapeHtml(tool.myNote)}</div>` : "";
+    function saveFavorites() {
+      localStorage.setItem(favoriteKey, JSON.stringify([...favorites]));
+    }
+
+    function ratingStars(value) {
+      const count = Math.max(0, Math.min(5, Number(value || 0)));
+      return "★★★★★".slice(0, count) + "☆☆☆☆☆".slice(0, 5 - count);
+    }
+
+    function searchableText(tool) {
+      return [
+        tool.name, tool.abbr, tool.category, tool.tag, tool.what, tool.best,
+        tool.difference, tool.pricing, tool.status, tool.myNote,
+        ...(tool.tags || []), ...(tool.alternatives || [])
+      ].join(" ").toLowerCase();
+    }
+
+    function filteredTools() {
+      const q = searchText.trim().toLowerCase();
+      return allTools.filter((tool) => {
+        const categoryOk = activeCategory === "全部" || tool.category === activeCategory;
+        const tagOk = activeTag === "全部" || (activeTag === "我的常用" ? favorites.has(tool.name) : (tool.tags || []).includes(activeTag) || tool.status === activeTag || tool.tag === activeTag || tool.pricing === activeTag);
+        const searchOk = !q || searchableText(tool).includes(q);
+        return categoryOk && tagOk && searchOk;
+      });
+    }
+
+    function renderFilters() {
+      const categories = Array.from(new Set(allTools.map((tool) => tool.category))).filter(Boolean);
+      const tags = Array.from(new Set(allTools.flatMap((tool) => [
+        tool.tag, tool.status, tool.pricing, ...(tool.tags || [])
+      ]))).filter(Boolean).slice(0, 28);
+
+      $("#categoryFilters").innerHTML = ["全部", ...categories].map((cat) =>
+        `<button class="filter ${cat === activeCategory ? "active" : ""}" type="button" data-category="${escapeHtml(cat)}">${escapeHtml(cat)}</button>`
+      ).join("");
+
+      $("#tagFilters").innerHTML = ["全部", "我的常用", ...tags].map((tag) =>
+        `<button class="filter ${tag === activeTag ? "active" : ""}" type="button" data-tag="${escapeHtml(tag)}">${escapeHtml(tag)}</button>`
+      ).join("");
+    }
+
+    function toolCard(tool) {
+      const fav = favorites.has(tool.name);
+      const chips = [tool.pricing, tool.status, ...(tool.tags || []).slice(0, 3)]
+        .filter(Boolean)
+        .map((tag) => `<span class="meta-chip">${escapeHtml(tag)}</span>`)
+        .join("");
+      const note = tool.myNote ? `<p><b>我的记录：</b>${escapeHtml(tool.myNote)}</p>` : "";
+
       return `
-        <a class="tool-card" href="${escapeHtml(tool.url)}" target="_blank" rel="noopener">
+        <article class="tool-card">
+          <button class="fav-btn ${fav ? "active" : ""}" type="button" data-fav="${escapeHtml(tool.name)}" title="收藏常用">★</button>
           <div class="logo" style="background:${escapeHtml(tool.color || "#111827")}">${escapeHtml(tool.abbr || tool.name.slice(0, 2))}</div>
           <div>
             <div class="tool-title">
               <h3>${escapeHtml(tool.name)}</h3>
               <span class="tag">${escapeHtml(tool.tag || "工具")}</span>
             </div>
+            <div>${chips}</div>
             <p><b>能做什么：</b>${escapeHtml(tool.what)}</p>
             <p><b>适合谁：</b>${escapeHtml(tool.best)}</p>
             <p><b>区别：</b>${escapeHtml(tool.difference)}</p>
+            <p><b>推荐：</b>${ratingStars(tool.rating)}</p>
             ${note}
+            <div class="card-actions">
+              <a class="open-btn" href="${escapeHtml(tool.url)}" target="_blank" rel="noopener">打开官网</a>
+              <button class="detail-btn" type="button" data-detail="${escapeHtml(tool.name)}">查看详情</button>
+            </div>
           </div>
-        </a>`;
+        </article>`;
     }
 
-    function renderFilters(categories) {
-      document.querySelector("#filters").innerHTML = ["全部", ...categories].map((cat) =>
-        `<button class="filter ${cat === active ? "active" : ""}" type="button" data-cat="${escapeHtml(cat)}">${escapeHtml(cat)}</button>`
-      ).join("");
+    function renderTools() {
+      const list = filteredTools();
+      const categories = Array.from(new Set(list.map((tool) => tool.category))).filter(Boolean);
+
+      $("#toolCount").textContent = allTools.length;
+      $("#catCount").textContent = Array.from(new Set(allTools.map((tool) => tool.category))).length;
+      $("#favCount").textContent = favorites.size;
+      $("#shownCount").textContent = list.length;
+
+      if (!list.length) {
+        $("#toolGroups").innerHTML = `<div class="empty">没有找到匹配工具。试试减少关键词，或点“清空筛选”。</div>`;
+        return;
+      }
+
+      $("#toolGroups").innerHTML = categories.map((cat) => {
+        const group = list.filter((tool) => tool.category === cat);
+        return `
+          <section>
+            <div class="category-band">
+              <div>
+                <h2>${escapeHtml(cat)}</h2>
+                <p>${escapeHtml(notes[cat] || "你自己的分类，可以继续在 tools.json 里扩展。")}</p>
+              </div>
+              <span class="meta-chip">${group.length} 个</span>
+            </div>
+            <div class="grid">${group.map(toolCard).join("")}</div>
+          </section>`;
+      }).join("");
     }
 
-    function render() {
-      const categories = Array.from(new Set(allTools.map((tool) => tool.category))).filter(Boolean);
-      const list = active === "全部" ? allTools : allTools.filter((tool) => tool.category === active);
-      const grouped = Array.from(new Set(list.map((tool) => tool.category))).filter(Boolean);
-
-      document.querySelector("#toolCount").textContent = allTools.length;
-      document.querySelector("#catCount").textContent = categories.length;
-      renderFilters(categories);
-      document.querySelector("#toolGroups").innerHTML = grouped.map((cat) => `
-        <section>
-          <div class="category-band">
-            <h2>${escapeHtml(cat)}</h2>
-            <p>${escapeHtml(notes[cat] || "你可以把自己的分类说明写在 index.html 的 notes 里。")}</p>
-          </div>
-          <div class="grid">${list.filter((tool) => tool.category === cat).map(card).join("")}</div>
-        </section>
+    function renderTemplates() {
+      $("#templateGrid").innerHTML = Object.entries(templates).map(([cat, text]) => `
+        <article class="template-card">
+          <h3>${escapeHtml(cat)}</h3>
+          <p>${escapeHtml(text)}</p>
+        </article>
       `).join("");
     }
 
-    document.querySelector("#filters").addEventListener("click", (event) => {
-      const button = event.target.closest("button");
+    function openDetail(name) {
+      const tool = allTools.find((item) => item.name === name);
+      if (!tool) return;
+      $("#modalCategory").textContent = `${tool.category} · ${tool.tag || "工具"}`;
+      $("#modalTitle").textContent = tool.name;
+      $("#modalBody").innerHTML = `
+        <p><b>能做什么：</b>${escapeHtml(tool.what)}</p>
+        <p><b>适合谁：</b>${escapeHtml(tool.best)}</p>
+        <p><b>和同类区别：</b>${escapeHtml(tool.difference)}</p>
+        <p><b>价格判断：</b>${escapeHtml(tool.pricing || "未记录")}　<b>状态：</b>${escapeHtml(tool.status || "未记录")}　<b>推荐：</b>${ratingStars(tool.rating)}</p>
+        <p><b>标签：</b>${(tool.tags || []).map((tag) => `<span class="meta-chip">${escapeHtml(tag)}</span>`).join("") || "未记录"}</p>
+        <h3>新手提示词</h3>
+        <div class="prompt-box" id="promptBox">${escapeHtml(tool.prompt || templates[tool.category] || "请记录这个工具的最佳用法。")}</div>
+        <div class="card-actions">
+          <button class="detail-btn" type="button" id="copyPrompt">复制提示词</button>
+          <a class="open-btn" href="${escapeHtml(tool.url)}" target="_blank" rel="noopener">打开官网</a>
+        </div>
+        <h3>替代工具</h3>
+        <p>${(tool.alternatives || []).map(escapeHtml).join(" / ") || "还未记录，可在 tools.json 里补充。"}</p>
+        <h3>我的记录</h3>
+        <p>${escapeHtml(tool.myNote || "还没有记录。你可以在 tools.json 的 myNote 里写自己的试用感受。")}</p>
+      `;
+      $("#detailDialog").showModal();
+      $("#copyPrompt").addEventListener("click", async () => {
+        await navigator.clipboard.writeText($("#promptBox").textContent);
+        $("#copyPrompt").textContent = "已复制";
+      });
+    }
+
+    function renderAll() {
+      renderFilters();
+      renderTools();
+      renderTemplates();
+    }
+
+    $("#categoryFilters").addEventListener("click", (event) => {
+      const button = event.target.closest("[data-category]");
       if (!button) return;
-      active = button.dataset.cat;
-      render();
+      activeCategory = button.dataset.category;
+      renderAll();
     });
 
-    document.querySelector("#copyLink").addEventListener("click", async () => {
+    $("#tagFilters").addEventListener("click", (event) => {
+      const button = event.target.closest("[data-tag]");
+      if (!button) return;
+      activeTag = button.dataset.tag;
+      renderAll();
+    });
+
+    $("#toolGroups").addEventListener("click", (event) => {
+      const fav = event.target.closest("[data-fav]");
+      if (fav) {
+        const name = fav.dataset.fav;
+        favorites.has(name) ? favorites.delete(name) : favorites.add(name);
+        saveFavorites();
+        renderAll();
+        return;
+      }
+      const detail = event.target.closest("[data-detail]");
+      if (detail) openDetail(detail.dataset.detail);
+    });
+
+    $("#searchInput").addEventListener("input", (event) => {
+      searchText = event.target.value;
+      renderTools();
+    });
+
+    $("#resetBtn").addEventListener("click", () => {
+      activeCategory = "全部";
+      activeTag = "全部";
+      searchText = "";
+      $("#searchInput").value = "";
+      renderAll();
+    });
+
+    $("#closeModal").addEventListener("click", () => $("#detailDialog").close());
+
+    $("#copyLink").addEventListener("click", async () => {
       try {
         await navigator.clipboard.writeText(location.href);
-        document.querySelector("#copyLink").textContent = "已复制网址";
+        $("#copyLink").textContent = "已复制网址";
       } catch {
-        document.querySelector("#copyLink").textContent = "复制失败，请手动复制";
+        $("#copyLink").textContent = "复制失败，请手动复制";
       }
     });
 
@@ -358,10 +832,10 @@
       })
       .then((tools) => {
         allTools = tools;
-        render();
+        renderAll();
       })
       .catch((error) => {
-        document.querySelector("#toolGroups").innerHTML = `<section class="notice"><b>加载失败：</b>${escapeHtml(error.message)}。请确认 tools.json 和 index.html 放在同一个目录。</section>`;
+        $("#toolGroups").innerHTML = `<section class="notice"><b>加载失败：</b>${escapeHtml(error.message)}。请确认 tools.json 和 index.html 放在同一个目录。</section>`;
       });
   </script>
 </body>

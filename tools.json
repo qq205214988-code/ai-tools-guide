@@ -1,374 +1,1119 @@
 [
-  {
-    "name": "ChatGPT",
-    "abbr": "GPT",
-    "category": "聊天写作",
-    "tag": "热门",
-    "url": "https://chatgpt.com/",
-    "color": "#10A37F",
-    "what": "写作、问答、分析、图片理解、做方案",
-    "best": "新手万能入口",
-    "difference": "生态和多模态能力强",
-    "myNote": "可改成你自己的试用感受"
-  },
-  {
-    "name": "Claude",
-    "abbr": "CL",
-    "category": "聊天写作",
-    "tag": "热门",
-    "url": "https://claude.ai/",
-    "color": "#D97757",
-    "what": "长文阅读、总结、写方案、代码理解",
-    "best": "处理长资料",
-    "difference": "长上下文和文字表达稳定",
-    "myNote": ""
-  },
-  {
-    "name": "Gemini",
-    "abbr": "GM",
-    "category": "聊天写作",
-    "tag": "热门",
-    "url": "https://gemini.google.com/",
-    "color": "#4285F4",
-    "what": "搜索结合、文档协作、图片/视频理解",
-    "best": "Google 生态用户",
-    "difference": "和 Gmail、Docs、Drive 衔接好",
-    "myNote": ""
-  },
-  {
-    "name": "Kimi",
-    "abbr": "KM",
-    "category": "聊天写作",
-    "tag": "好用",
-    "url": "https://kimi.moonshot.cn/",
-    "color": "#5B6CFF",
-    "what": "长文档阅读、中文写作、资料总结",
-    "best": "中文资料很多的人",
-    "difference": "中文长文档体验友好",
-    "myNote": ""
-  },
-  {
-    "name": "豆包",
-    "abbr": "DB",
-    "category": "聊天写作",
-    "tag": "热门",
-    "url": "https://www.doubao.com/",
-    "color": "#7C3AED",
-    "what": "聊天、写作、图片、语音",
-    "best": "日常问答和内容创作",
-    "difference": "产品入口轻、上手快",
-    "myNote": ""
-  },
-  {
-    "name": "DeepSeek",
-    "abbr": "DS",
-    "category": "聊天写作",
-    "tag": "热门",
-    "url": "https://www.deepseek.com/",
-    "color": "#1F6FEB",
-    "what": "推理、代码、数学、中文问答",
-    "best": "需要性价比和推理",
-    "difference": "推理模型口碑强",
-    "myNote": ""
-  },
-  {
-    "name": "通义千问",
-    "abbr": "QW",
-    "category": "聊天写作",
-    "tag": "热门",
-    "url": "https://tongyi.aliyun.com/qianwen/",
-    "color": "#FF6A00",
-    "what": "中文办公、问答、企业场景",
-    "best": "阿里生态或企业用户",
-    "difference": "企业与云服务连接强",
-    "myNote": ""
-  },
-  {
-    "name": "文心一言",
-    "abbr": "WX",
-    "category": "聊天写作",
-    "tag": "热门",
-    "url": "https://yiyan.baidu.com/",
-    "color": "#1769FF",
-    "what": "中文问答、搜索、内容生成",
-    "best": "百度生态用户",
-    "difference": "中文搜索资源结合",
-    "myNote": ""
-  },
-  {
-    "name": "腾讯元宝",
-    "abbr": "YB",
-    "category": "聊天写作",
-    "tag": "好用",
-    "url": "https://yuanbao.tencent.com/",
-    "color": "#00A4FF",
-    "what": "阅读资料、写作、联网搜索",
-    "best": "微信或腾讯生态用户",
-    "difference": "日常办公和资料问答方便",
-    "myNote": ""
-  },
-  {
-    "name": "Perplexity",
-    "abbr": "PX",
-    "category": "搜索研究",
-    "tag": "热门",
-    "url": "https://www.perplexity.ai/",
-    "color": "#20B8B8",
-    "what": "联网搜索、引用来源、快速研究",
-    "best": "想要带出处答案",
-    "difference": "搜索加问答结合紧密",
-    "myNote": ""
-  },
-  {
-    "name": "秘塔AI搜索",
-    "abbr": "MT",
-    "category": "搜索研究",
-    "tag": "好用",
-    "url": "https://metaso.cn/",
-    "color": "#111827",
-    "what": "中文 AI 搜索、资料溯源、报告",
-    "best": "查资料写报告",
-    "difference": "中文搜索结果整理清晰",
-    "myNote": ""
-  },
-  {
-    "name": "NotebookLM",
-    "abbr": "NL",
-    "category": "搜索研究",
-    "tag": "好用",
-    "url": "https://notebooklm.google.com/",
-    "color": "#FBBC05",
-    "what": "上传资料后问答、生成摘要",
-    "best": "学习资料和会议文档",
-    "difference": "围绕自己的资料回答",
-    "myNote": ""
-  },
-  {
-    "name": "Elicit",
-    "abbr": "EL",
-    "category": "搜索研究",
-    "tag": "冷门好用",
-    "url": "https://elicit.com/",
-    "color": "#6D28D9",
-    "what": "找论文、提取研究结论",
-    "best": "学术或行业研究",
-    "difference": "偏论文证据表",
-    "myNote": ""
-  },
-  {
-    "name": "Consensus",
-    "abbr": "CS",
-    "category": "搜索研究",
-    "tag": "冷门好用",
-    "url": "https://consensus.app/",
-    "color": "#0F766E",
-    "what": "用论文回答问题、看科学共识",
-    "best": "医学或科研入门查询",
-    "difference": "强调学术证据",
-    "myNote": ""
-  },
-  {
-    "name": "Gamma",
-    "abbr": "GA",
-    "category": "办公PPT",
-    "tag": "热门",
-    "url": "https://gamma.app/",
-    "color": "#7C3AED",
-    "what": "一句话生成 PPT、网页、文档",
-    "best": "快速做演示",
-    "difference": "排版速度快",
-    "myNote": ""
-  },
-  {
-    "name": "Canva",
-    "abbr": "CA",
-    "category": "办公PPT",
-    "tag": "热门",
-    "url": "https://www.canva.com/",
-    "color": "#00C4CC",
-    "what": "海报、PPT、短视频、模板设计",
-    "best": "不会设计的新手",
-    "difference": "模板和素材极多",
-    "myNote": ""
-  },
-  {
-    "name": "WPS AI",
-    "abbr": "WPS",
-    "category": "办公PPT",
-    "tag": "好用",
-    "url": "https://ai.wps.cn/",
-    "color": "#E11D48",
-    "what": "中文文档、表格、PPT 辅助",
-    "best": "国内办公用户",
-    "difference": "本土办公格式友好",
-    "myNote": ""
-  },
-  {
-    "name": "Napkin AI",
-    "abbr": "NP",
-    "category": "办公PPT",
-    "tag": "冷门好用",
-    "url": "https://www.napkin.ai/",
-    "color": "#EF4444",
-    "what": "把文字变成流程图或示意图",
-    "best": "做汇报插图",
-    "difference": "文本可视化很快",
-    "myNote": ""
-  },
-  {
-    "name": "Midjourney",
-    "abbr": "MJ",
-    "category": "图片设计",
-    "tag": "热门",
-    "url": "https://www.midjourney.com/",
-    "color": "#000000",
-    "what": "高质量艺术图、海报视觉、概念图",
-    "best": "追求画面质感",
-    "difference": "审美和风格化强",
-    "myNote": ""
-  },
-  {
-    "name": "Adobe Firefly",
-    "abbr": "AF",
-    "category": "图片设计",
-    "tag": "热门",
-    "url": "https://firefly.adobe.com/",
-    "color": "#FF0000",
-    "what": "商业设计、修图、生成图片",
-    "best": "设计师或商用素材",
-    "difference": "Adobe 生态和版权友好",
-    "myNote": ""
-  },
-  {
-    "name": "Ideogram",
-    "abbr": "ID",
-    "category": "图片设计",
-    "tag": "好用",
-    "url": "https://ideogram.ai/",
-    "color": "#F59E0B",
-    "what": "带文字的海报、Logo 风格图",
-    "best": "海报标题需要准确文字",
-    "difference": "文字生成能力突出",
-    "myNote": ""
-  },
-  {
-    "name": "Runway",
-    "abbr": "RW",
-    "category": "视频数字人",
-    "tag": "热门",
-    "url": "https://runwayml.com/",
-    "color": "#111827",
-    "what": "文字或图片生成视频、视频编辑",
-    "best": "短片和广告分镜",
-    "difference": "专业视频 AI 工具箱",
-    "myNote": ""
-  },
-  {
-    "name": "可灵AI",
-    "abbr": "KL",
-    "category": "视频数字人",
-    "tag": "热门",
-    "url": "https://klingai.kuaishou.com/",
-    "color": "#2563EB",
-    "what": "中文视频生成、图生视频",
-    "best": "国内短视频创作者",
-    "difference": "中文场景和人物动效好",
-    "myNote": ""
-  },
-  {
-    "name": "HeyGen",
-    "abbr": "HG",
-    "category": "视频数字人",
-    "tag": "热门",
-    "url": "https://www.heygen.com/",
-    "color": "#22C55E",
-    "what": "数字人讲解、口播、翻译视频",
-    "best": "课程或营销口播",
-    "difference": "数字人和多语言强",
-    "myNote": ""
-  },
-  {
-    "name": "Cursor",
-    "abbr": "CU",
-    "category": "编程开发",
-    "tag": "热门",
-    "url": "https://www.cursor.com/",
-    "color": "#111827",
-    "what": "AI 写代码、改项目、解释代码",
-    "best": "程序员和想学代码的人",
-    "difference": "编辑器内 AI 协作强",
-    "myNote": ""
-  },
-  {
-    "name": "GitHub Copilot",
-    "abbr": "GH",
-    "category": "编程开发",
-    "tag": "热门",
-    "url": "https://github.com/features/copilot",
-    "color": "#24292F",
-    "what": "代码补全、解释、测试建议",
-    "best": "GitHub 或 VS Code 用户",
-    "difference": "开发生态覆盖广",
-    "myNote": ""
-  },
-  {
-    "name": "Bolt",
-    "abbr": "BT",
-    "category": "编程开发",
-    "tag": "热门",
-    "url": "https://bolt.new/",
-    "color": "#FACC15",
-    "what": "用自然语言生成网页应用",
-    "best": "快速原型",
-    "difference": "在线全栈生成快",
-    "myNote": ""
-  },
-  {
-    "name": "Lovable",
-    "abbr": "LV",
-    "category": "编程开发",
-    "tag": "热门",
-    "url": "https://lovable.dev/",
-    "color": "#FF5A8A",
-    "what": "对话生成应用和页面",
-    "best": "产品原型或创业想法",
-    "difference": "偏产品化网页应用",
-    "myNote": ""
-  },
-  {
-    "name": "Suno",
-    "abbr": "SN",
-    "category": "音频会议",
-    "tag": "热门",
-    "url": "https://suno.com/",
-    "color": "#F59E0B",
-    "what": "一句话生成歌曲",
-    "best": "短视频配乐或灵感",
-    "difference": "完整歌曲生成强",
-    "myNote": ""
-  },
-  {
-    "name": "ElevenLabs",
-    "abbr": "11",
-    "category": "音频会议",
-    "tag": "热门",
-    "url": "https://elevenlabs.io/",
-    "color": "#111827",
-    "what": "AI 配音、声音克隆、多语言朗读",
-    "best": "视频配音或播客",
-    "difference": "语音自然度高",
-    "myNote": ""
-  },
-  {
-    "name": "Krisp",
-    "abbr": "KS",
-    "category": "音频会议",
-    "tag": "冷门好用",
-    "url": "https://krisp.ai/",
-    "color": "#2DD4BF",
-    "what": "通话降噪、会议摘要",
-    "best": "远程会议",
-    "difference": "先解决声音质量",
-    "myNote": ""
-  }
+    {
+        "name":  "ChatGPT",
+        "abbr":  "GPT",
+        "category":  "聊天写作",
+        "tag":  "热门",
+        "url":  "https://chatgpt.com/",
+        "color":  "#10A37F",
+        "what":  "写作、问答、分析、图片理解、做方案",
+        "best":  "新手万能入口",
+        "difference":  "生态和多模态能力强",
+        "myNote":  "可改成你自己的试用感受",
+        "pricing":  "免费+付费",
+        "status":  "常用",
+        "rating":  5,
+        "tags":  [
+                     "中文好用",
+                     "适合小白",
+                     "手机可用"
+                 ],
+        "prompt":  "请你扮演我的AI助理，先问我3个关键问题，再帮我输出清晰可执行的方案。",
+        "alternatives":  [
+
+                         ]
+    },
+    {
+        "name":  "Claude",
+        "abbr":  "CL",
+        "category":  "聊天写作",
+        "tag":  "热门",
+        "url":  "https://claude.ai/",
+        "color":  "#D97757",
+        "what":  "长文阅读、总结、写方案、代码理解",
+        "best":  "处理长资料",
+        "difference":  "长上下文和文字表达稳定",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "常用",
+        "rating":  5,
+        "tags":  [
+                     "中文好用",
+                     "适合小白",
+                     "手机可用"
+                 ],
+        "prompt":  "请你扮演我的AI助理，先问我3个关键问题，再帮我输出清晰可执行的方案。",
+        "alternatives":  [
+
+                         ]
+    },
+    {
+        "name":  "Gemini",
+        "abbr":  "GM",
+        "category":  "聊天写作",
+        "tag":  "热门",
+        "url":  "https://gemini.google.com/",
+        "color":  "#4285F4",
+        "what":  "搜索结合、文档协作、图片/视频理解",
+        "best":  "Google 生态用户",
+        "difference":  "和 Gmail、Docs、Drive 衔接好",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "常用",
+        "rating":  5,
+        "tags":  [
+                     "中文好用",
+                     "适合小白",
+                     "手机可用"
+                 ],
+        "prompt":  "请你扮演我的AI助理，先问我3个关键问题，再帮我输出清晰可执行的方案。",
+        "alternatives":  [
+
+                         ]
+    },
+    {
+        "name":  "Kimi",
+        "abbr":  "KM",
+        "category":  "聊天写作",
+        "tag":  "好用",
+        "url":  "https://kimi.moonshot.cn/",
+        "color":  "#5B6CFF",
+        "what":  "长文档阅读、中文写作、资料总结",
+        "best":  "中文资料很多的人",
+        "difference":  "中文长文档体验友好",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "常用",
+        "rating":  5,
+        "tags":  [
+                     "中文好用",
+                     "适合小白",
+                     "手机可用"
+                 ],
+        "prompt":  "请你扮演我的AI助理，先问我3个关键问题，再帮我输出清晰可执行的方案。",
+        "alternatives":  [
+
+                         ]
+    },
+    {
+        "name":  "豆包",
+        "abbr":  "DB",
+        "category":  "聊天写作",
+        "tag":  "热门",
+        "url":  "https://www.doubao.com/",
+        "color":  "#7C3AED",
+        "what":  "聊天、写作、图片、语音",
+        "best":  "日常问答和内容创作",
+        "difference":  "产品入口轻、上手快",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "常用",
+        "rating":  5,
+        "tags":  [
+                     "中文好用",
+                     "适合小白",
+                     "手机可用"
+                 ],
+        "prompt":  "请你扮演我的AI助理，先问我3个关键问题，再帮我输出清晰可执行的方案。",
+        "alternatives":  [
+
+                         ]
+    },
+    {
+        "name":  "DeepSeek",
+        "abbr":  "DS",
+        "category":  "聊天写作",
+        "tag":  "热门",
+        "url":  "https://www.deepseek.com/",
+        "color":  "#1F6FEB",
+        "what":  "推理、代码、数学、中文问答",
+        "best":  "需要性价比和推理",
+        "difference":  "推理模型口碑强",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "常用",
+        "rating":  5,
+        "tags":  [
+                     "中文好用",
+                     "适合小白",
+                     "手机可用"
+                 ],
+        "prompt":  "请你扮演我的AI助理，先问我3个关键问题，再帮我输出清晰可执行的方案。",
+        "alternatives":  [
+
+                         ]
+    },
+    {
+        "name":  "通义千问",
+        "abbr":  "QW",
+        "category":  "聊天写作",
+        "tag":  "热门",
+        "url":  "https://tongyi.aliyun.com/qianwen/",
+        "color":  "#FF6A00",
+        "what":  "中文办公、问答、企业场景",
+        "best":  "阿里生态或企业用户",
+        "difference":  "企业与云服务连接强",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "常用",
+        "rating":  5,
+        "tags":  [
+                     "中文好用",
+                     "适合小白",
+                     "手机可用"
+                 ],
+        "prompt":  "请你扮演我的AI助理，先问我3个关键问题，再帮我输出清晰可执行的方案。",
+        "alternatives":  [
+
+                         ]
+    },
+    {
+        "name":  "文心一言",
+        "abbr":  "WX",
+        "category":  "聊天写作",
+        "tag":  "热门",
+        "url":  "https://yiyan.baidu.com/",
+        "color":  "#1769FF",
+        "what":  "中文问答、搜索、内容生成",
+        "best":  "百度生态用户",
+        "difference":  "中文搜索资源结合",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "常用",
+        "rating":  5,
+        "tags":  [
+                     "中文好用",
+                     "适合小白",
+                     "手机可用"
+                 ],
+        "prompt":  "请你扮演我的AI助理，先问我3个关键问题，再帮我输出清晰可执行的方案。",
+        "alternatives":  [
+
+                         ]
+    },
+    {
+        "name":  "腾讯元宝",
+        "abbr":  "YB",
+        "category":  "聊天写作",
+        "tag":  "好用",
+        "url":  "https://yuanbao.tencent.com/",
+        "color":  "#00A4FF",
+        "what":  "阅读资料、写作、联网搜索",
+        "best":  "微信或腾讯生态用户",
+        "difference":  "日常办公和资料问答方便",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "常用",
+        "rating":  5,
+        "tags":  [
+                     "中文好用",
+                     "适合小白",
+                     "手机可用"
+                 ],
+        "prompt":  "请你扮演我的AI助理，先问我3个关键问题，再帮我输出清晰可执行的方案。",
+        "alternatives":  [
+
+                         ]
+    },
+    {
+        "name":  "Perplexity",
+        "abbr":  "PX",
+        "category":  "搜索研究",
+        "tag":  "热门",
+        "url":  "https://www.perplexity.ai/",
+        "color":  "#20B8B8",
+        "what":  "联网搜索、引用来源、快速研究",
+        "best":  "想要带出处答案",
+        "difference":  "搜索加问答结合紧密",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "常用",
+        "rating":  5,
+        "tags":  [
+                     "带来源",
+                     "适合调研",
+                     "适合学习"
+                 ],
+        "prompt":  "请围绕这个主题做资料调研，列出关键结论、来源、风险和下一步行动。",
+        "alternatives":  [
+
+                         ]
+    },
+    {
+        "name":  "秘塔AI搜索",
+        "abbr":  "MT",
+        "category":  "搜索研究",
+        "tag":  "好用",
+        "url":  "https://metaso.cn/",
+        "color":  "#111827",
+        "what":  "中文 AI 搜索、资料溯源、报告",
+        "best":  "查资料写报告",
+        "difference":  "中文搜索结果整理清晰",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "常用",
+        "rating":  5,
+        "tags":  [
+                     "带来源",
+                     "适合调研",
+                     "适合学习"
+                 ],
+        "prompt":  "请围绕这个主题做资料调研，列出关键结论、来源、风险和下一步行动。",
+        "alternatives":  [
+
+                         ]
+    },
+    {
+        "name":  "NotebookLM",
+        "abbr":  "NL",
+        "category":  "搜索研究",
+        "tag":  "好用",
+        "url":  "https://notebooklm.google.com/",
+        "color":  "#FBBC05",
+        "what":  "上传资料后问答、生成摘要",
+        "best":  "学习资料和会议文档",
+        "difference":  "围绕自己的资料回答",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "常用",
+        "rating":  5,
+        "tags":  [
+                     "带来源",
+                     "适合调研",
+                     "适合学习"
+                 ],
+        "prompt":  "请围绕这个主题做资料调研，列出关键结论、来源、风险和下一步行动。",
+        "alternatives":  [
+
+                         ]
+    },
+    {
+        "name":  "Elicit",
+        "abbr":  "EL",
+        "category":  "搜索研究",
+        "tag":  "冷门好用",
+        "url":  "https://elicit.com/",
+        "color":  "#6D28D9",
+        "what":  "找论文、提取研究结论",
+        "best":  "学术或行业研究",
+        "difference":  "偏论文证据表",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "常用",
+        "rating":  5,
+        "tags":  [
+                     "带来源",
+                     "适合调研",
+                     "适合学习"
+                 ],
+        "prompt":  "请围绕这个主题做资料调研，列出关键结论、来源、风险和下一步行动。",
+        "alternatives":  [
+
+                         ]
+    },
+    {
+        "name":  "Consensus",
+        "abbr":  "CS",
+        "category":  "搜索研究",
+        "tag":  "冷门好用",
+        "url":  "https://consensus.app/",
+        "color":  "#0F766E",
+        "what":  "用论文回答问题、看科学共识",
+        "best":  "医学或科研入门查询",
+        "difference":  "强调学术证据",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "常用",
+        "rating":  5,
+        "tags":  [
+                     "带来源",
+                     "适合调研",
+                     "适合学习"
+                 ],
+        "prompt":  "请围绕这个主题做资料调研，列出关键结论、来源、风险和下一步行动。",
+        "alternatives":  [
+
+                         ]
+    },
+    {
+        "name":  "Gamma",
+        "abbr":  "GA",
+        "category":  "办公PPT",
+        "tag":  "热门",
+        "url":  "https://gamma.app/",
+        "color":  "#7C3AED",
+        "what":  "一句话生成 PPT、网页、文档",
+        "best":  "快速做演示",
+        "difference":  "排版速度快",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "常用",
+        "rating":  4,
+        "tags":  [
+                     "办公效率",
+                     "适合小白",
+                     "模板丰富"
+                 ],
+        "prompt":  "请把这个主题整理成PPT大纲，包含标题、每页重点、配图建议和讲稿。",
+        "alternatives":  [
+
+                         ]
+    },
+    {
+        "name":  "Canva",
+        "abbr":  "CA",
+        "category":  "办公PPT",
+        "tag":  "热门",
+        "url":  "https://www.canva.com/",
+        "color":  "#00C4CC",
+        "what":  "海报、PPT、短视频、模板设计",
+        "best":  "不会设计的新手",
+        "difference":  "模板和素材极多",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "常用",
+        "rating":  4,
+        "tags":  [
+                     "办公效率",
+                     "适合小白",
+                     "模板丰富"
+                 ],
+        "prompt":  "请把这个主题整理成PPT大纲，包含标题、每页重点、配图建议和讲稿。",
+        "alternatives":  [
+
+                         ]
+    },
+    {
+        "name":  "WPS AI",
+        "abbr":  "WPS",
+        "category":  "办公PPT",
+        "tag":  "好用",
+        "url":  "https://ai.wps.cn/",
+        "color":  "#E11D48",
+        "what":  "中文文档、表格、PPT 辅助",
+        "best":  "国内办公用户",
+        "difference":  "本土办公格式友好",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "常用",
+        "rating":  4,
+        "tags":  [
+                     "办公效率",
+                     "适合小白",
+                     "模板丰富"
+                 ],
+        "prompt":  "请把这个主题整理成PPT大纲，包含标题、每页重点、配图建议和讲稿。",
+        "alternatives":  [
+
+                         ]
+    },
+    {
+        "name":  "Napkin AI",
+        "abbr":  "NP",
+        "category":  "办公PPT",
+        "tag":  "冷门好用",
+        "url":  "https://www.napkin.ai/",
+        "color":  "#EF4444",
+        "what":  "把文字变成流程图或示意图",
+        "best":  "做汇报插图",
+        "difference":  "文本可视化很快",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "常用",
+        "rating":  4,
+        "tags":  [
+                     "办公效率",
+                     "适合小白",
+                     "模板丰富"
+                 ],
+        "prompt":  "请把这个主题整理成PPT大纲，包含标题、每页重点、配图建议和讲稿。",
+        "alternatives":  [
+
+                         ]
+    },
+    {
+        "name":  "Midjourney",
+        "abbr":  "MJ",
+        "category":  "图片设计",
+        "tag":  "热门",
+        "url":  "https://www.midjourney.com/",
+        "color":  "#000000",
+        "what":  "高质量艺术图、海报视觉、概念图",
+        "best":  "追求画面质感",
+        "difference":  "审美和风格化强",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "试用中",
+        "rating":  4,
+        "tags":  [
+                     "创意设计",
+                     "图片生成",
+                     "商用需确认"
+                 ],
+        "prompt":  "生成一张适合社交媒体海报的图片，风格清爽高级，主体明确，画面比例16:9。",
+        "alternatives":  [
+
+                         ]
+    },
+    {
+        "name":  "Adobe Firefly",
+        "abbr":  "AF",
+        "category":  "图片设计",
+        "tag":  "热门",
+        "url":  "https://firefly.adobe.com/",
+        "color":  "#FF0000",
+        "what":  "商业设计、修图、生成图片",
+        "best":  "设计师或商用素材",
+        "difference":  "Adobe 生态和版权友好",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "试用中",
+        "rating":  4,
+        "tags":  [
+                     "创意设计",
+                     "图片生成",
+                     "商用需确认"
+                 ],
+        "prompt":  "生成一张适合社交媒体海报的图片，风格清爽高级，主体明确，画面比例16:9。",
+        "alternatives":  [
+
+                         ]
+    },
+    {
+        "name":  "Ideogram",
+        "abbr":  "ID",
+        "category":  "图片设计",
+        "tag":  "好用",
+        "url":  "https://ideogram.ai/",
+        "color":  "#F59E0B",
+        "what":  "带文字的海报、Logo 风格图",
+        "best":  "海报标题需要准确文字",
+        "difference":  "文字生成能力突出",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "试用中",
+        "rating":  4,
+        "tags":  [
+                     "创意设计",
+                     "图片生成",
+                     "商用需确认"
+                 ],
+        "prompt":  "生成一张适合社交媒体海报的图片，风格清爽高级，主体明确，画面比例16:9。",
+        "alternatives":  [
+
+                         ]
+    },
+    {
+        "name":  "Runway",
+        "abbr":  "RW",
+        "category":  "视频数字人",
+        "tag":  "热门",
+        "url":  "https://runwayml.com/",
+        "color":  "#111827",
+        "what":  "文字或图片生成视频、视频编辑",
+        "best":  "短片和广告分镜",
+        "difference":  "专业视频 AI 工具箱",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "试用中",
+        "rating":  4,
+        "tags":  [
+                     "视频生成",
+                     "短视频",
+                     "商用需确认"
+                 ],
+        "prompt":  "把这个脚本改成30秒短视频分镜，写出镜头、画面、字幕和配音。",
+        "alternatives":  [
+
+                         ]
+    },
+    {
+        "name":  "可灵AI",
+        "abbr":  "KL",
+        "category":  "视频数字人",
+        "tag":  "热门",
+        "url":  "https://klingai.kuaishou.com/",
+        "color":  "#2563EB",
+        "what":  "中文视频生成、图生视频",
+        "best":  "国内短视频创作者",
+        "difference":  "中文场景和人物动效好",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "试用中",
+        "rating":  4,
+        "tags":  [
+                     "视频生成",
+                     "短视频",
+                     "商用需确认"
+                 ],
+        "prompt":  "把这个脚本改成30秒短视频分镜，写出镜头、画面、字幕和配音。",
+        "alternatives":  [
+
+                         ]
+    },
+    {
+        "name":  "HeyGen",
+        "abbr":  "HG",
+        "category":  "视频数字人",
+        "tag":  "热门",
+        "url":  "https://www.heygen.com/",
+        "color":  "#22C55E",
+        "what":  "数字人讲解、口播、翻译视频",
+        "best":  "课程或营销口播",
+        "difference":  "数字人和多语言强",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "试用中",
+        "rating":  4,
+        "tags":  [
+                     "视频生成",
+                     "短视频",
+                     "商用需确认"
+                 ],
+        "prompt":  "把这个脚本改成30秒短视频分镜，写出镜头、画面、字幕和配音。",
+        "alternatives":  [
+
+                         ]
+    },
+    {
+        "name":  "Cursor",
+        "abbr":  "CU",
+        "category":  "编程开发",
+        "tag":  "热门",
+        "url":  "https://www.cursor.com/",
+        "color":  "#111827",
+        "what":  "AI 写代码、改项目、解释代码",
+        "best":  "程序员和想学代码的人",
+        "difference":  "编辑器内 AI 协作强",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "试用中",
+        "rating":  4,
+        "tags":  [
+                     "建站开发",
+                     "效率工具",
+                     "适合进阶"
+                 ],
+        "prompt":  "请根据我的需求生成一个最小可用版本，并说明文件结构、运行方法和后续优化。",
+        "alternatives":  [
+
+                         ]
+    },
+    {
+        "name":  "GitHub Copilot",
+        "abbr":  "GH",
+        "category":  "编程开发",
+        "tag":  "热门",
+        "url":  "https://github.com/features/copilot",
+        "color":  "#24292F",
+        "what":  "代码补全、解释、测试建议",
+        "best":  "GitHub 或 VS Code 用户",
+        "difference":  "开发生态覆盖广",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "试用中",
+        "rating":  4,
+        "tags":  [
+                     "建站开发",
+                     "效率工具",
+                     "适合进阶"
+                 ],
+        "prompt":  "请根据我的需求生成一个最小可用版本，并说明文件结构、运行方法和后续优化。",
+        "alternatives":  [
+
+                         ]
+    },
+    {
+        "name":  "Bolt",
+        "abbr":  "BT",
+        "category":  "编程开发",
+        "tag":  "热门",
+        "url":  "https://bolt.new/",
+        "color":  "#FACC15",
+        "what":  "用自然语言生成网页应用",
+        "best":  "快速原型",
+        "difference":  "在线全栈生成快",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "试用中",
+        "rating":  4,
+        "tags":  [
+                     "建站开发",
+                     "效率工具",
+                     "适合进阶"
+                 ],
+        "prompt":  "请根据我的需求生成一个最小可用版本，并说明文件结构、运行方法和后续优化。",
+        "alternatives":  [
+
+                         ]
+    },
+    {
+        "name":  "Lovable",
+        "abbr":  "LV",
+        "category":  "编程开发",
+        "tag":  "热门",
+        "url":  "https://lovable.dev/",
+        "color":  "#FF5A8A",
+        "what":  "对话生成应用和页面",
+        "best":  "产品原型或创业想法",
+        "difference":  "偏产品化网页应用",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "试用中",
+        "rating":  4,
+        "tags":  [
+                     "建站开发",
+                     "效率工具",
+                     "适合进阶"
+                 ],
+        "prompt":  "请根据我的需求生成一个最小可用版本，并说明文件结构、运行方法和后续优化。",
+        "alternatives":  [
+
+                         ]
+    },
+    {
+        "name":  "Suno",
+        "abbr":  "SN",
+        "category":  "音频会议",
+        "tag":  "热门",
+        "url":  "https://suno.com/",
+        "color":  "#F59E0B",
+        "what":  "一句话生成歌曲",
+        "best":  "短视频配乐或灵感",
+        "difference":  "完整歌曲生成强",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "试用中",
+        "rating":  4,
+        "tags":  [
+                     "音频",
+                     "会议记录",
+                     "内容创作"
+                 ],
+        "prompt":  "请把这段内容改成自然口播稿，语气轻松，适合短视频配音。",
+        "alternatives":  [
+
+                         ]
+    },
+    {
+        "name":  "ElevenLabs",
+        "abbr":  "11",
+        "category":  "音频会议",
+        "tag":  "热门",
+        "url":  "https://elevenlabs.io/",
+        "color":  "#111827",
+        "what":  "AI 配音、声音克隆、多语言朗读",
+        "best":  "视频配音或播客",
+        "difference":  "语音自然度高",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "试用中",
+        "rating":  4,
+        "tags":  [
+                     "音频",
+                     "会议记录",
+                     "内容创作"
+                 ],
+        "prompt":  "请把这段内容改成自然口播稿，语气轻松，适合短视频配音。",
+        "alternatives":  [
+
+                         ]
+    },
+    {
+        "name":  "Krisp",
+        "abbr":  "KS",
+        "category":  "音频会议",
+        "tag":  "冷门好用",
+        "url":  "https://krisp.ai/",
+        "color":  "#2DD4BF",
+        "what":  "通话降噪、会议摘要",
+        "best":  "远程会议",
+        "difference":  "先解决声音质量",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "试用中",
+        "rating":  4,
+        "tags":  [
+                     "音频",
+                     "会议记录",
+                     "内容创作"
+                 ],
+        "prompt":  "请把这段内容改成自然口播稿，语气轻松，适合短视频配音。",
+        "alternatives":  [
+
+                         ]
+    },
+    {
+        "name":  "Beautiful.ai",
+        "abbr":  "BA",
+        "category":  "办公PPT",
+        "tag":  "冷门好用",
+        "url":  "https://www.beautiful.ai/",
+        "color":  "#EC4899",
+        "what":  "自动排版商务PPT",
+        "best":  "商务演示和销售汇报",
+        "difference":  "版式约束强，不容易做乱",
+        "myNote":  "",
+        "pricing":  "付费为主",
+        "status":  "待试用",
+        "rating":  4,
+        "tags":  [
+                     "PPT",
+                     "商务",
+                     "自动排版"
+                 ],
+        "prompt":  "请把这份汇报整理成10页商务PPT，每页只保留一个核心观点。",
+        "alternatives":  [
+                             "Gamma",
+                             "Canva",
+                             "WPS AI"
+                         ]
+    },
+    {
+        "name":  "Tome",
+        "abbr":  "TO",
+        "category":  "办公PPT",
+        "tag":  "冷门好用",
+        "url":  "https://tome.app/",
+        "color":  "#111827",
+        "what":  "AI叙事型演示文稿",
+        "best":  "故事化汇报和方案展示",
+        "difference":  "更像演讲故事板",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "待试用",
+        "rating":  3,
+        "tags":  [
+                     "PPT",
+                     "故事化",
+                     "演示"
+                 ],
+        "prompt":  "请把这个想法改成一个有开头、冲突、解决方案和行动号召的演示。",
+        "alternatives":  [
+                             "Gamma",
+                             "Beautiful.ai"
+                         ]
+    },
+    {
+        "name":  "Rows AI",
+        "abbr":  "RA",
+        "category":  "办公PPT",
+        "tag":  "冷门好用",
+        "url":  "https://rows.com/ai",
+        "color":  "#10B981",
+        "what":  "AI表格、数据清洗、公式",
+        "best":  "轻量数据整理",
+        "difference":  "表格和AI结合直观",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "待试用",
+        "rating":  4,
+        "tags":  [
+                     "表格",
+                     "数据",
+                     "办公"
+                 ],
+        "prompt":  "请把这份数据整理成可分析表格，并告诉我3个值得关注的结论。",
+        "alternatives":  [
+                             "Excel Copilot",
+                             "WPS AI"
+                         ]
+    },
+    {
+        "name":  "Leonardo AI",
+        "abbr":  "LE",
+        "category":  "图片设计",
+        "tag":  "好用",
+        "url":  "https://leonardo.ai/",
+        "color":  "#8B5CF6",
+        "what":  "游戏美术、产品图、风格训练",
+        "best":  "批量做设计图",
+        "difference":  "控制和资产管理较强",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "试用中",
+        "rating":  4,
+        "tags":  [
+                     "图片生成",
+                     "产品图",
+                     "风格控制"
+                 ],
+        "prompt":  "生成一组统一风格的产品展示图，背景干净，光线柔和，适合电商详情页。",
+        "alternatives":  [
+                             "Midjourney",
+                             "Krea"
+                         ]
+    },
+    {
+        "name":  "Krea",
+        "abbr":  "KR",
+        "category":  "图片设计",
+        "tag":  "冷门好用",
+        "url":  "https://www.krea.ai/",
+        "color":  "#06B6D4",
+        "what":  "实时生成、图片增强、风格探索",
+        "best":  "边调边看效果",
+        "difference":  "实时创作体验好",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "待试用",
+        "rating":  4,
+        "tags":  [
+                     "实时生成",
+                     "图片增强",
+                     "创意设计"
+                 ],
+        "prompt":  "根据我的草图实时生成更精致的视觉版本，保持构图不变。",
+        "alternatives":  [
+                             "Leonardo AI",
+                             "Adobe Firefly"
+                         ]
+    },
+    {
+        "name":  "即梦AI",
+        "abbr":  "JM",
+        "category":  "图片设计",
+        "tag":  "好用",
+        "url":  "https://jimeng.jianying.com/",
+        "color":  "#7C3AED",
+        "what":  "中文图片和视频创作",
+        "best":  "国内内容创作者",
+        "difference":  "中文提示词和短视频生态友好",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "试用中",
+        "rating":  4,
+        "tags":  [
+                     "中文好用",
+                     "图片生成",
+                     "视频生成"
+                 ],
+        "prompt":  "生成一张小红书封面图，中文标题清晰，画面明亮，适合新手教程。",
+        "alternatives":  [
+                             "豆包",
+                             "可灵AI"
+                         ]
+    },
+    {
+        "name":  "Pika",
+        "abbr":  "PK",
+        "category":  "视频数字人",
+        "tag":  "热门",
+        "url":  "https://pika.art/",
+        "color":  "#A855F7",
+        "what":  "生成短视频、动画效果",
+        "best":  "社媒短视频创意",
+        "difference":  "玩法轻快，适合创意测试",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "试用中",
+        "rating":  4,
+        "tags":  [
+                     "视频生成",
+                     "短视频",
+                     "动画"
+                 ],
+        "prompt":  "把这张图片变成5秒短视频，镜头轻微推进，氛围自然。",
+        "alternatives":  [
+                             "Runway",
+                             "可灵AI"
+                         ]
+    },
+    {
+        "name":  "Synthesia",
+        "abbr":  "SY",
+        "category":  "视频数字人",
+        "tag":  "好用",
+        "url":  "https://www.synthesia.io/",
+        "color":  "#6366F1",
+        "what":  "企业培训数字人视频",
+        "best":  "培训和内部课程",
+        "difference":  "企业模板成熟",
+        "myNote":  "",
+        "pricing":  "付费为主",
+        "status":  "待试用",
+        "rating":  3,
+        "tags":  [
+                     "数字人",
+                     "培训",
+                     "企业"
+                 ],
+        "prompt":  "把这份培训文档改成数字人口播稿，语气专业但容易听懂。",
+        "alternatives":  [
+                             "HeyGen"
+                         ]
+    },
+    {
+        "name":  "Replit",
+        "abbr":  "RP",
+        "category":  "编程开发",
+        "tag":  "好用",
+        "url":  "https://replit.com/",
+        "color":  "#F97316",
+        "what":  "在线写代码、部署小应用",
+        "best":  "不想装环境的新手",
+        "difference":  "浏览器里从写到发布",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "待试用",
+        "rating":  4,
+        "tags":  [
+                     "建站开发",
+                     "在线编程",
+                     "适合小白"
+                 ],
+        "prompt":  "帮我做一个简单网页应用，并一步步解释我如何修改它。",
+        "alternatives":  [
+                             "Bolt",
+                             "Lovable"
+                         ]
+    },
+    {
+        "name":  "v0",
+        "abbr":  "V0",
+        "category":  "编程开发",
+        "tag":  "好用",
+        "url":  "https://v0.dev/",
+        "color":  "#000000",
+        "what":  "生成前端界面代码",
+        "best":  "做网页UI",
+        "difference":  "界面组件生成强",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "待试用",
+        "rating":  4,
+        "tags":  [
+                     "网页UI",
+                     "前端",
+                     "原型"
+                 ],
+        "prompt":  "根据这个需求生成一个现代、手机适配的网页界面。",
+        "alternatives":  [
+                             "Lovable",
+                             "Bolt"
+                         ]
+    },
+    {
+        "name":  "Udio",
+        "abbr":  "UD",
+        "category":  "音频会议",
+        "tag":  "热门",
+        "url":  "https://www.udio.com/",
+        "color":  "#8B5CF6",
+        "what":  "生成歌曲、改歌词、音乐片段",
+        "best":  "音乐创作尝试",
+        "difference":  "音乐质感和结构可控",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "待试用",
+        "rating":  4,
+        "tags":  [
+                     "音乐生成",
+                     "短视频配乐",
+                     "创意"
+                 ],
+        "prompt":  "生成一首适合科技感短视频的背景音乐，节奏明快，无人声。",
+        "alternatives":  [
+                             "Suno"
+                         ]
+    },
+    {
+        "name":  "Descript",
+        "abbr":  "DE",
+        "category":  "音频会议",
+        "tag":  "冷门好用",
+        "url":  "https://www.descript.com/",
+        "color":  "#2563EB",
+        "what":  "像改文档一样剪音频视频",
+        "best":  "播客和课程剪辑",
+        "difference":  "剪辑流程很省心",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "待试用",
+        "rating":  4,
+        "tags":  [
+                     "剪辑",
+                     "播客",
+                     "视频"
+                 ],
+        "prompt":  "把这段口播整理成更流畅的剪辑稿，删掉重复和口头禅。",
+        "alternatives":  [
+                             "CapCut",
+                             "Krisp"
+                         ]
+    },
+    {
+        "name":  "Otter.ai",
+        "abbr":  "OT",
+        "category":  "音频会议",
+        "tag":  "冷门好用",
+        "url":  "https://otter.ai/",
+        "color":  "#00A3FF",
+        "what":  "会议转写、摘要、行动项",
+        "best":  "英文会议记录",
+        "difference":  "会议场景成熟",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "待试用",
+        "rating":  3,
+        "tags":  [
+                     "会议记录",
+                     "英文",
+                     "转写"
+                 ],
+        "prompt":  "把会议记录整理成摘要、决策、待办事项和负责人。",
+        "alternatives":  [
+                             "Krisp",
+                             "Notion AI"
+                         ]
+    },
+    {
+        "name":  "Phind",
+        "abbr":  "PH",
+        "category":  "搜索研究",
+        "tag":  "冷门好用",
+        "url":  "https://www.phind.com/",
+        "color":  "#F97316",
+        "what":  "技术问答、代码搜索、解释报错",
+        "best":  "程序员查问题",
+        "difference":  "偏开发者搜索",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "待试用",
+        "rating":  4,
+        "tags":  [
+                     "开发者",
+                     "搜索",
+                     "代码"
+                 ],
+        "prompt":  "解释这个报错的原因，给我最可能的解决步骤和验证方法。",
+        "alternatives":  [
+                             "Perplexity",
+                             "Cursor"
+                         ]
+    },
+    {
+        "name":  "Glasp",
+        "abbr":  "GL",
+        "category":  "搜索研究",
+        "tag":  "冷门好用",
+        "url":  "https://glasp.co/",
+        "color":  "#F97316",
+        "what":  "网页和视频笔记、摘要",
+        "best":  "学习型浏览",
+        "difference":  "知识摘录方便",
+        "myNote":  "",
+        "pricing":  "免费+付费",
+        "status":  "待试用",
+        "rating":  3,
+        "tags":  [
+                     "学习",
+                     "笔记",
+                     "摘要"
+                 ],
+        "prompt":  "把这篇文章提炼成要点、金句和可执行清单。",
+        "alternatives":  [
+                             "NotebookLM"
+                         ]
+    }
 ]
